@@ -1,0 +1,58 @@
+{
+    "version": 1,
+    "author": "Marco Túlio Macêdo",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "board-pi-pico-w", "id": "pico", "top": -22.45, "left": 61.15, "attrs": {} },
+      { "type": "wokwi-led", "id": "led1", "top": 40, "left": -130.6, "attrs": { "color": "red" } },
+      {
+        "type": "wokwi-led",
+        "id": "led2",
+        "top": 90,
+        "left": -130.6,
+        "attrs": { "color": "yellow" }
+      },
+      {
+        "type": "wokwi-led",
+        "id": "led3",
+        "top": 140,
+        "left": -130.6,
+        "attrs": { "color": "green" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r1",
+        "top": 78.75,
+        "left": -67.2,
+        "attrs": { "value": "330" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r2",
+        "top": 128.75,
+        "left": -67.2,
+        "attrs": { "value": "330" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r3",
+        "top": 178.75,
+        "left": -67.2,
+        "attrs": { "value": "330" }
+      }
+    ],
+    "connections": [
+      [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+      [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+      [ "led1:A", "r1:1", "green", [ "v0" ] ],
+      [ "led2:A", "r2:1", "green", [ "v0" ] ],
+      [ "led3:A", "r3:1", "green", [ "v0" ] ],
+      [ "pico:GP12", "r2:2", "green", [ "h0" ] ],
+      [ "pico:GP11", "r1:2", "green", [ "h-38.4", "v-40.4" ] ],
+      [ "pico:GP13", "r3:2", "green", [ "h-38.4", "v40.44" ] ],
+      [ "pico:GND.2", "led3:C", "black", [ "v-19.2", "h-220.8", "v143.6" ] ],
+      [ "pico:GND.2", "led2:C", "black", [ "v-19.2", "h-220.8", "v93.6" ] ],
+      [ "pico:GND.2", "led1:C", "black", [ "v-19.2", "h-220.8", "v43.6" ] ]
+    ],
+    "dependencies": {}
+  }
